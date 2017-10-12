@@ -11,14 +11,9 @@ data$Date <- dmy(data$Date)
 feb1 <- subset(data, Date == "2007-02-01")
 feb2 <- subset(data, Date == "2007-02-02")
 feb <- rbind(feb1, feb2)
-data$datetime[1]
+
 #PNG plot
 png("plot1.png", height = 480, width = 480)
 hist(as.numeric(feb$Global_active_power)/500, col = "red", breaks = 20, xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
 dev.off()
 
-
-
-png("plot3.png", height = 480, width = 480)
-plot(as.numeric(as.character(clean$Sub_metering_1)) ~ clean$datetime, )
-dev.off()
